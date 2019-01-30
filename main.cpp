@@ -11,12 +11,16 @@ void updateFire(int** fireValues, int fireWidth, int fireHeight)
     int newFireValue = 0;
     for (int i=0; i < fireHeight - 1; i++) {
         for (int j=0; j < fireWidth; j++) {
-            decay = (rand() % 2);
-            newFireValue = fireValues[i+1][j] - decay;
+            decay = (rand() % 3);
+            newFireValue = fireValues[i+1][j] - (decay & 1);
 
             //  If the J value is less than 0, it will change the other
             // side of the fire
-            int newJ = j-decay >= 0 ? j-decay : fireWidth-decay;
+            //  If it is greater than the size of the width of the fire,
+            // the same will happen
+            int newJ = j-decay+1;
+            newJ = newJ < 0 ? fireWidth - 1 : newJ;
+            newJ = newJ >= fireWidth ? 0 : newJ; 
             fireValues[i][newJ] = newFireValue >= 0 ? newFireValue : 0;
         }
     }
@@ -67,9 +71,9 @@ int main()
 
     // Variables used in the fire algorithm
     // TODO: Change fire effect to its own class
-    const int fireWidth  = 80;
-    const int fireHeight = 80;
-    float fireSize = 12.f;
+    const int fireWidth  = 160;
+    const int fireHeight = 160;
+    float fireSize = 6.f;
 
     // Creating a dynamic 2D array for the fire
     int** fireValues;
