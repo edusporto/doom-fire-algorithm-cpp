@@ -6,17 +6,18 @@
 int main()
 {
     // Configuration variables
-    int windowWidth  = 1280;
-    int windowHeight = 720;
+    int windowWidth  = 375;
+    int windowHeight = 375;
     unsigned int fps = 60;
 
     // SFML variables
     sf::Uint32 style = sf::Style::Titlebar |
-                       sf::Style::Close;
+                       sf::Style::Close |
+                       sf::Style::Resize;
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight),
                             "Doom Fire Algorithm",
                             style);
-
+    window.setFramerateLimit(fps);
 
     // Variables used in the fire algorithm
     // TODO: Change this to its own class
