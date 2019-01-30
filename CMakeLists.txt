@@ -4,7 +4,7 @@ project(DoomFire)
 set(CMAKE_CXX_STANDARD 11)
 
 # Compile to debug
-# set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Debug)
 
 # Adds all header files in the include folder to the project
 include_directories(include)
