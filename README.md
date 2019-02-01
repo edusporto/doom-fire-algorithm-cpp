@@ -25,5 +25,11 @@ Creating the fire effect from DOOM in C++. Based in a project by filipedeschamps
 ### Windows
 * Instructions will be added in the future
 
+### Extra functionality
+* Pressing 't' prints the numeric value of each fire pixel
+* Pressing 'p' pauses the fire
+* Pressing the space bar toggles between minimum and maximum fire source strength
+* Pressing the up and down arrow keys changes the strength of the fire source
+
 ## About
 Based in: https://github.com/filipedeschamps/doom-fire-algorithm
