@@ -81,8 +81,6 @@ void Fire::update()
     }
 }
 
-
-// This function requires testing
 void Fire::render(sf::RenderWindow& window)
 {
     sf::RectangleShape currentPixel;
