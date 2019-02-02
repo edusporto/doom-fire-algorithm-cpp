@@ -32,6 +32,9 @@ Fire::Fire(float pixelSize, unsigned int width,
             m_values[i][j] = 0;
         }
     }
+
+    currentPixel = sf::RectangleShape(
+                        sf::Vector2f(m_pixelSize, m_pixelSize));;
 }
 
 Fire::~Fire()
@@ -83,11 +86,8 @@ void Fire::update()
 
 void Fire::render(sf::RenderWindow& window)
 {
-    sf::RectangleShape currentPixel;
     for (int i=0; i < m_height; i++) {
         for (int j=0; j < m_width; j++) {
-            currentPixel = sf::RectangleShape(
-                                sf::Vector2f(m_pixelSize, m_pixelSize));
             currentPixel.setPosition(m_origin.x + j * m_pixelSize,
                                      m_origin.y + i * m_pixelSize);
             currentPixel.setFillColor(colorPalette[m_values[i][j]]);
