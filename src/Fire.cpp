@@ -25,9 +25,9 @@ Fire::Fire(float pixelSize, unsigned int width,
     m_origin = origin;
 
     m_values = new unsigned int*[height];
-    for (int i=0; i < height; i++) {
+    for (unsigned int i=0; i < height; i++) {
         m_values[i] = new unsigned int[width];
-        for (int j=0; j < width; j++) {
+        for (unsigned int j=0; j < width; j++) {
             // Initializes all values as 0
             m_values[i][j] = 0;
         }
@@ -39,7 +39,7 @@ Fire::Fire(float pixelSize, unsigned int width,
 
 Fire::~Fire()
 {
-    for (int i=0; i < m_height; i++) {
+    for (unsigned int i=0; i < m_height; i++) {
         delete[] m_values[i];
     }
 
@@ -53,7 +53,7 @@ void Fire::setFireSourceStrength(int strength)
     if (strength > 36)
         strength = 36;
 
-    for (int j=0; j < m_width; j++) {
+    for (unsigned int j=0; j < m_width; j++) {
         m_values[m_height-1][j] = strength;
     }
 }
@@ -67,8 +67,8 @@ void Fire::update()
 {
     int decay;
     int newFireValue;
-    for (int i=0; i < m_height - 1; i++) {
-        for (int j=0; j < m_width; j++) {
+    for (unsigned int i=0; i < m_height - 1; i++) {
+        for (unsigned int j=0; j < m_width; j++) {
             decay = (rand() % 3);
             newFireValue = m_values[i+1][j] - (decay & 1);
 
@@ -86,8 +86,8 @@ void Fire::update()
 
 void Fire::render(sf::RenderWindow& window)
 {
-    for (int i=0; i < m_height; i++) {
-        for (int j=0; j < m_width; j++) {
+    for (unsigned int i=0; i < m_height; i++) {
+        for (unsigned int j=0; j < m_width; j++) {
             if (m_values[i][j] == 0)
                 continue;
 

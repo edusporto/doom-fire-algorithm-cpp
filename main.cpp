@@ -19,9 +19,9 @@ void testPrintFireValues(const Fire& fire)
 int main()
 {
     // Variables used in the fire algorithm
-    const int fireWidth  = 240;
-    const int fireHeight = 160;
-    const float fireSize = 3.f;
+    const int fireWidth  = 200;
+    const int fireHeight = 140;
+    const float fireSize = 4.f;
 
     // Configuration variables
     int windowWidth  = fireWidth  * fireSize;
